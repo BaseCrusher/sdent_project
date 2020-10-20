@@ -1,0 +1,15 @@
+[gd_scene format=2]
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 376.425
+margin_top = 176.199
+margin_right = 533.425
+margin_bottom = 321.199
+text = "Start game"

@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://resources/images/bg_tile.png" type="Texture" id=1]
-[ext_resource path="res://GameObjects/Character/Node2D.tscn" type="PackedScene" id=2]
+[ext_resource path="res://GameObjects/Character/Character.tscn" type="PackedScene" id=2]
+
 
 [node name="AbstractLevel" type="Node2D"]
 

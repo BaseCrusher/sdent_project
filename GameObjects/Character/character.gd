@@ -1,5 +1,10 @@
 extends Sprite
 
+enum CharacterState{
+	standing_on_plate,
+	flying
+}
+
 # Constants
 const DAMPING : float = 0.97
 const DIRECTION_VECTOR_MULTIPLIER : float = 1.0
@@ -15,6 +20,7 @@ var current_speed : float = 0.0
 # Normalized vector oposite to pulling direction muliplied by DIRECTION_VECTOR_MULTIPLIER
 var direction_vector : Vector2 = Vector2.ZERO
 
+var character_state = CharacterState.flying
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

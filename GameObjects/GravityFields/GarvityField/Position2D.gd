@@ -5,7 +5,7 @@ extends Position2D
 # var a = 2
 # var b = "text"
 
-onready var character = get_node("../../icon")
+onready var character = get_node("../../AbstractLevel/Character")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

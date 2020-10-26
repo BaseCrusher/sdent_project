@@ -24,6 +24,9 @@ var character_state = CharacterState.flying
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var start_plate = get_tree().get_root().find_node("StartPlate", true, false)
+	if start_plate != null:
+		global_position = start_plate.global_position
 	start_position = global_position
 	pass # Replace with function body.
 

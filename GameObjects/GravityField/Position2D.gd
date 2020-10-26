@@ -20,7 +20,7 @@ func _draw():
 
 func _physics_process(delta):
 	if (global_position - character.position).length() <= 150:
-		character.direction_vector += (global_position - character.position).normalized() * 5
+		character.direction_vector += (global_position - character.position).normalized() * 10
 		character.current_speed += (global_position - character.position).length() / 100 / character.VECTOR_LENGTH_TO_SPEED
 		pass
 	pass

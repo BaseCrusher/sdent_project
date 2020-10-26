@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://neg_Position2D.gd" type="Script" id=1]
+[ext_resource path="res://GameObjects/AntiGravityField/neg_Position2D.gd" type="Script" id=1]
 
 [node name="blackhole" type="Node2D"]
 

@@ -7,10 +7,13 @@
 [node name="Level1" type="Node"]
 
 [node name="AbstractLevel" parent="." instance=ExtResource( 1 )]
-position = Vector2( 8.98999, -14.983 )
+position = Vector2( -22.1228, -20.6399 )
 
 [node name="JumpPlate" parent="." instance=ExtResource( 2 )]
-position = Vector2( 226.274, 444.063 )
+position = Vector2( 602.455, 240.416 )
 
 [node name="blackhole" parent="." instance=ExtResource( 3 )]
-position = Vector2( 670.337, 234.759 )
+position = Vector2( 364.867, 412.95 )
+
+[node name="JumpPlate2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 709.936, 429.921 )

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://resources/images/gravi_field_outer.png" type="Texture" id=1]
+[ext_resource path="res://resources/images/gravi_field_inner.png" type="Texture" id=2]
+
+[node name="GravityField" type="Node2D"]
+
+[node name="gravi_field_inner" type="Sprite" parent="."]
+scale = Vector2( 0.165942, 0.165942 )
+texture = ExtResource( 2 )
+
+[node name="gravi_field_outer" type="Sprite" parent="gravi_field_inner"]
+scale = Vector2( 3.54319, 3.54319 )
+z_index = -1
+texture = ExtResource( 1 )

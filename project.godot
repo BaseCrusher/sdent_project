@@ -8,9 +8,26 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "Character",
+"language": "GDScript",
+"path": "res://GameObjects/Character/CharacterScript.gd"
+}, {
+"base": "Reference",
+"class": "CharacterStates",
+"language": "GDScript",
+"path": "res://GameObjects/Character/CharacterStates.gd"
+}, {
+"base": "Node2D",
+"class": "JumpPlate",
+"language": "GDScript",
+"path": "res://GameObjects/JumpPlates/JumpPlateScript.gd"
+} ]
 _global_script_class_icons={
-
+"Character": "",
+"CharacterStates": "",
+"JumpPlate": ""
 }
 
 [application]
@@ -21,7 +38,8 @@ config/icon="res://resources/images/icon.png"
 
 [autoload]
 
-LevelGlobal="*res://Levels/level_global.gd"
+Global="*res://Global.gd"
+LevelGlobal="*res://Levels/LevelGlobal.gd"
 
 [rendering]
 

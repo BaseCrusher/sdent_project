@@ -6,6 +6,7 @@ const DAMPING : float = 0.97
 const DIRECTION_VECTOR_MULTIPLIER : float = 1.0
 const MAX_SPEED : float = 7.0
 const MAX_PULL_LENGTH : float = 300.0
+const MIN_PULL_LENGTH : float = 50.0
 const VECTOR_LENGTH_TO_SPEED : float = 20.0
 
 # Variables
@@ -67,13 +68,16 @@ func handle_pulling():
 
 func handle_releasing():
 	is_selected = false
-	state = CharacterStates.FLYING
 	var distance = position.distance_to(start_pos)
-	move_direction = position.direction_to(start_pos) * distance * DIRECTION_VECTOR_MULTIPLIER
-	speed = distance / VECTOR_LENGTH_TO_SPEED
-	if speed > MAX_SPEED:
-		speed = MAX_SPEED
-	pass
+	if distance > MIN_PULL_LENGTH:
+		state = CharacterStates.FLYING
+		move_direction = position.direction_to(start_pos) * distance * DIRECTION_VECTOR_MULTIPLIER
+		speed = distance / VECTOR_LENGTH_TO_SPEED
+		if speed > MAX_SPEED:
+			speed = MAX_SPEED
+	else:
+		position = start_pos
+
 
 
 

@@ -6,18 +6,19 @@
 [node name="Level1" type="Node"]
 
 [node name="AbstractLevel" parent="." instance=ExtResource( 1 )]
-position = Vector2( -22.1228, -20.6399 )
+position = Vector2( -19.4531, -20.6399 )
 z_index = -1
 
 [node name="JumpPlate" parent="." instance=ExtResource( 2 )]
-position = Vector2( 186.676, 124.451 )
+position = Vector2( 361.29, 178.423 )
 is_start_plate = true
 
 [node name="JumpPlate2" parent="." instance=ExtResource( 2 )]
-position = Vector2( -253.984, -123.817 )
+position = Vector2( -406.375, -206.362 )
+is_end_plate = true
 
 [node name="JumpPlate3" parent="." instance=ExtResource( 2 )]
-position = Vector2( -269.858, 146.041 )
+position = Vector2( -425.423, 193.663 )
 
 [node name="JumpPlate4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 276.208, -184.139 )
+position = Vector2( 377.802, -209.537 )

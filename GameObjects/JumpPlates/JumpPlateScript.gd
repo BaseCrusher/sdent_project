@@ -2,6 +2,7 @@ extends Node2D
 class_name JumpPlate
 
 export(bool) var is_start_plate
+export(bool) var is_end_plate
 
 onready var level_global : Node = $"/root/LevelGlobal"
 onready var character : Node2D = level_global.get_character_node()
@@ -16,6 +17,9 @@ func _ready():
 
 
 func character_entered(body : Node):
+	if is_end_plate:
+		print("bla")
+		
 	if is_active and body is Character:
 		level_global.activate_all_jump_plates()
 		is_active = false

@@ -8,7 +8,7 @@
 [node name="LevelUI" parent="." instance=ExtResource( 2 )]
 
 [node name="bg_tile" type="Sprite" parent="."]
-position = Vector2( 1255.54, 709.467 )
+position = Vector2( -2.83716, -2.60358 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( -432.87, -129.404, 2518.33, 1448.08 )

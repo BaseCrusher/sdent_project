@@ -1,16 +1,17 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://UI/SettingsMenu.gd" type="Script" id=1]
-[ext_resource path="res://UI/ResolutionOptBtn.gd" type="Script" id=2]
+[ext_resource path="res://UI/SettingsMenu/ResolutionOptBtn.gd" type="Script" id=1]
+[ext_resource path="res://UI/SettingsMenu/SettingsMenu.gd" type="Script" id=2]
+
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="MuteBx" type="CheckBox" parent="."]
 margin_left = 182.481
-margin_top = 44.4322
+margin_top = 43.4322
 margin_right = 270.481
-margin_bottom = 104.432
+margin_bottom = 103.432
 text = "Mute"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -22,7 +23,7 @@ margin_top = 90.0
 margin_right = 301.0
 margin_bottom = 125.0
 text = "Resolution"
-script = ExtResource( 2 )
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

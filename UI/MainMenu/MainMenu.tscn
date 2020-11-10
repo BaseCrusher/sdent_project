@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://UI/MainMenu/MainMenu.gd" type="Script" id=1]
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.25989
+margin_top = -1.25989
+margin_right = -1.25989
+margin_bottom = -1.25989
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartGameBtn" type="Button" parent="."]
+margin_left = 362.74
+margin_top = 63.0
+margin_right = 576.74
+margin_bottom = 177.0
+text = "Start game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SettingsBtn" type="Button" parent="."]
+margin_left = 360.0
+margin_top = 213.401
+margin_right = 584.0
+margin_bottom = 302.401
+text = "Settings"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="StartGameBtn" to="." method="_on_StartGameBtn_pressed"]
+[connection signal="pressed" from="SettingsBtn" to="." method="_on_SettingsBtn_pressed"]

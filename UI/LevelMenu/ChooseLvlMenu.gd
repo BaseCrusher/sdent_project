@@ -1,4 +1,4 @@
-extends Control
+extends Node2D
 
 
 # Declare member variables here. Examples:
@@ -16,10 +16,9 @@ func _ready():
 #	pass
 
 
+func _on_BackBtn_pressed():
+	get_tree().change_scene("res://UI/MainMenu/MainMenu.tscn")
 
-func _on_StartGameBtn_pressed():
-	get_tree().change_scene("res://UI/ChooseLvlMenu.tscn")
 
-
-func _on_SettingsBtn_pressed():
-	get_tree().change_scene("res://UI/SettingsMenu.tscn")
+func _on_Lvl1Btn_pressed():
+	get_tree().change_scene("res://Levels/Level1.tscn")

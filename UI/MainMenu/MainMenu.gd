@@ -1,4 +1,4 @@
-extends Button
+extends Control
 
 
 # Declare member variables here. Examples:
@@ -14,9 +14,12 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-func _on_StartGameBtn_pressed():
-	get_tree().change_scene("res://Levels/AbstractLevel.tscn")
-	
 
-func _on_ChooseLevelBtn_pressed():
-	get_tree().change_scene("res://UI/LevelMenu.tscn")
+
+
+func _on_StartGameBtn_pressed():
+	get_tree().change_scene("res://UI/LevelMenu/ChooseLvlMenu.tscn")
+
+
+func _on_SettingsBtn_pressed():
+	get_tree().change_scene("res://UI/SettingsMenu/SettingsMenu.tscn")

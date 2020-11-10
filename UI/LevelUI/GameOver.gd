@@ -21,11 +21,11 @@ func _on_TryAgainBtn_pressed():
 
 
 func _on_ChooseLvlBtn_pressed():
-	get_tree().change_scene("res://UI/ChooseLvlMenu.tscn")
+	get_tree().change_scene("res://UI/LevelMenu/ChooseLvlMenu.tscn")
 
 
 func _on_MainMenuBtn_pressed():
-	get_tree().change_scene("res://UI/MainMenu.tscn")
+	get_tree().change_scene("res://UI/MainMenu/MainMenu.tscn")
 
 
 func _on_ExitBtn_pressed():

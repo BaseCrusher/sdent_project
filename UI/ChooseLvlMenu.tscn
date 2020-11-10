@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://UI/ChooseLvlMenu.gd" type="Script" id=1]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Lvl1Btn" type="Button" parent="."]
+margin_left = 66.7758
+margin_top = 26.4583
+margin_right = 196.776
+margin_bottom = 109.458
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lvl2Btn" type="Button" parent="."]
+margin_left = 223.0
+margin_top = 26.0
+margin_right = 356.0
+margin_bottom = 110.0
+text = "2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lvl3Btn" type="Button" parent="."]
+margin_left = 390.575
+margin_top = 21.4186
+margin_right = 502.575
+margin_bottom = 114.419
+text = "3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackBtn" type="Button" parent="."]
+margin_left = 65.5159
+margin_top = 302.381
+margin_right = 238.516
+margin_bottom = 386.381
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Lvl1Btn" to="." method="_on_Lvl1Btn_pressed"]
+[connection signal="pressed" from="BackBtn" to="." method="_on_BackBtn_pressed"]

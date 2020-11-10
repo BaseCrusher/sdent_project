@@ -1,0 +1,33 @@
+[gd_scene format=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StartLvl1Btn" type="Button" parent="."]
+margin_left = 49.0985
+margin_top = 25.7921
+margin_right = 129.099
+margin_bottom = 92.7921
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartLvl2Btn" type="Button" parent="."]
+margin_left = 158.75
+margin_top = 26.4584
+margin_right = 242.75
+margin_bottom = 93.4584
+text = "2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartLvl3Btn" type="Button" parent="."]
+margin_left = 270.04
+margin_top = 26.2599
+margin_right = 350.04
+margin_bottom = 94.2599
+text = "3"
+__meta__ = {
+"_edit_use_anchors_": false
+}

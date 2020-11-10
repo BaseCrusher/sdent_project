@@ -1,6 +1,13 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://UI/MainMenu.gd" type="Script" id=1]
+=======
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://UI/StartGameBtn.gd" type="Script" id=1]
+[ext_resource path="res://UI/ChooseLevelBtn.gd" type="Script" id=2]
+>>>>>>> Stashed changes
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
@@ -15,14 +22,44 @@ __meta__ = {
 }
 
 [node name="StartGameBtn" type="Button" parent="."]
+<<<<<<< Updated upstream
 margin_left = 362.74
 margin_top = 63.0
 margin_right = 576.74
 margin_bottom = 177.0
+=======
+margin_left = 316.48
+margin_top = 92.7798
+margin_right = 594.48
+margin_bottom = 181.78
+>>>>>>> Stashed changes
 text = "Start game"
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ChooseLevelBtn" type="Button" parent="."]
+margin_left = 319.74
+margin_top = 202.74
+margin_right = 592.74
+margin_bottom = 278.74
+text = "Choose Level"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SettingsBtn" type="Button" parent="."]
+margin_left = 318.0
+margin_top = 299.0
+margin_right = 595.0
+margin_bottom = 374.0
+text = "Settings"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+<<<<<<< Updated upstream
 
 [node name="SettingsBtn" type="Button" parent="."]
 margin_left = 360.0
@@ -35,3 +72,7 @@ __meta__ = {
 }
 [connection signal="pressed" from="StartGameBtn" to="." method="_on_StartGameBtn_pressed"]
 [connection signal="pressed" from="SettingsBtn" to="." method="_on_SettingsBtn_pressed"]
+=======
+[connection signal="pressed" from="StartGameBtn" to="StartGameBtn" method="_on_StartGameBtn_pressed"]
+[connection signal="pressed" from="ChooseLevelBtn" to="ChooseLevelBtn" method="_on_ChooseLevelBtn_pressed"]
+>>>>>>> Stashed changes

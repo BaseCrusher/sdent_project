@@ -9,7 +9,7 @@ extents = Vector2( 15.9149, 15.9716 )
 [node name="BarrierObstacle" type="Node2D"]
 script = ExtResource( 2 )
 
-[node name="obstacle" type="Sprite" parent="."]
+[node name="obstacle_texture" type="Sprite" parent="."]
 scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )
 

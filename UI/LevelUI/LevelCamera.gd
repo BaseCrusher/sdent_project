@@ -7,6 +7,7 @@ extends Camera2D
 
 onready var level_global : Node = $"/root/LevelGlobal"
 onready var character : Node = level_global.get_character_node()
+onready var ui_node : Node = $"./.."
 
 var is_in_character = false
 var pressed = false
@@ -36,26 +37,26 @@ func _process(delta):
 	pass
 
 func _input(event):
-	
-	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
-		if not is_in_character:
-			if event.pressed:
-				pressed = true
-			if not event.pressed:
-				pressed = false
+	if not level_global.is_game_over:
+		if event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
+			if not is_in_character:
+				if event.pressed:
+					pressed = true
+				if not event.pressed:
+					pressed = false
 
-	if pressed and event is InputEventMouseMotion:
-		global_position -= event.relative
-		pass
+		if pressed and event is InputEventMouseMotion:
+			global_position -= event.relative
+			pass
+			
+		if event is InputEventMouseButton and event.button_index == BUTTON_WHEEL_UP:
+			target_zoom -= Vector2(zoom_amount, zoom_amount)
+			if target_zoom < min_zoom:
+				target_zoom = min_zoom
+			pass
 		
-	if event is InputEventMouseButton and event.button_index == BUTTON_WHEEL_UP:
-		target_zoom -= Vector2(zoom_amount, zoom_amount)
-		if target_zoom < min_zoom:
-			target_zoom = min_zoom
-		pass
-	
-	if event is InputEventMouseButton and event.button_index == BUTTON_WHEEL_DOWN:
-		target_zoom += Vector2(zoom_amount, zoom_amount)
-		if target_zoom > max_zoom:
-			target_zoom = max_zoom
-		pass
+		if event is InputEventMouseButton and event.button_index == BUTTON_WHEEL_DOWN:
+			target_zoom += Vector2(zoom_amount, zoom_amount)
+			if target_zoom > max_zoom:
+				target_zoom = max_zoom
+			pass

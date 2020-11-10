@@ -41,6 +41,11 @@ config/icon="res://resources/images/icon.png"
 Global="*res://Global.gd"
 LevelGlobal="*res://Levels/LevelGlobal.gd"
 
+[display]
+
+window/stretch/mode="2d"
+window/stretch/aspect="expand"
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"

@@ -8,11 +8,7 @@
 [node name="Level1" type="Node"]
 
 [node name="AbstractLevel" parent="." instance=ExtResource( 1 )]
-<<<<<<< Updated upstream
 position = Vector2( 56.7389, 57.5802 )
-=======
-position = Vector2( 174.347, 79.3195 )
->>>>>>> Stashed changes
 z_index = -1
 
 [node name="GravityField" parent="." instance=ExtResource( 3 )]

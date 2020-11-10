@@ -1,61 +1,70 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://UI/LevelUI/GameOver.gd" type="Script" id=1]
+[ext_resource path="res://resources/images/game_over_bg.png" type="Texture" id=2]
 
-[node name="Node2D" type="Node2D"]
+[node name="GameOver" type="CanvasLayer"]
 script = ExtResource( 1 )
 
-[node name="TryAgainBtn" type="Button" parent="."]
-margin_left = 73.0754
-margin_top = 272.143
-margin_right = 255.075
-margin_bottom = 335.143
+[node name="GameOver" type="Node2D" parent="."]
+
+[node name="TryAgainBtn" type="Button" parent="GameOver"]
+margin_left = 291.325
+margin_top = 344.187
+margin_right = 473.324
+margin_bottom = 407.187
 text = "Try again"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ChooseLvlBtn" type="Button" parent="."]
-margin_left = 309.94
-margin_top = 269.623
-margin_right = 481.94
-margin_bottom = 335.623
+[node name="ChooseLvlBtn" type="Button" parent="GameOver"]
+margin_left = 62.0256
+margin_top = 345.904
+margin_right = 234.026
+margin_bottom = 411.904
 text = "Choose Level"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MainMenuBtn" type="Button" parent="."]
-margin_left = 529.167
-margin_top = 268.363
-margin_right = 691.167
-margin_bottom = 335.363
+[node name="MainMenuBtn" type="Button" parent="GameOver"]
+margin_left = 518.573
+margin_top = 336.169
+margin_right = 680.573
+margin_bottom = 403.169
 text = "Main Menu"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ExitBtn" type="Button" parent="."]
-margin_left = 757.212
-margin_top = 263.323
-margin_right = 923.212
-margin_bottom = 336.323
+[node name="ExitBtn" type="Button" parent="GameOver"]
+margin_left = 725.428
+margin_top = 345.961
+margin_right = 891.428
+margin_bottom = 418.961
 text = "Exit Game"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="."]
-margin_left = 365.978
-margin_top = 72.1588
-margin_right = 442.978
-margin_bottom = 89.1588
+[node name="Label" type="Label" parent="GameOver"]
+margin_left = 416.832
+margin_top = 67.921
+margin_right = 493.832
+margin_bottom = 84.921
 rect_scale = Vector2( 3, 3 )
 text = "Game Over!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="TryAgainBtn" to="." method="_on_TryAgainBtn_pressed"]
-[connection signal="pressed" from="ChooseLvlBtn" to="." method="_on_ChooseLvlBtn_pressed"]
-[connection signal="pressed" from="MainMenuBtn" to="." method="_on_MainMenuBtn_pressed"]
-[connection signal="pressed" from="ExitBtn" to="." method="_on_ExitBtn_pressed"]
+
+[node name="game_over_bg" type="Sprite" parent="GameOver"]
+position = Vector2( 548.802, 317.839 )
+scale = Vector2( 73.7488, 41.1735 )
+z_index = -1
+texture = ExtResource( 2 )
+[connection signal="pressed" from="GameOver/TryAgainBtn" to="." method="_on_TryAgainBtn_pressed"]
+[connection signal="pressed" from="GameOver/ChooseLvlBtn" to="." method="_on_ChooseLvlBtn_pressed"]
+[connection signal="pressed" from="GameOver/MainMenuBtn" to="." method="_on_MainMenuBtn_pressed"]
+[connection signal="pressed" from="GameOver/ExitBtn" to="." method="_on_ExitBtn_pressed"]

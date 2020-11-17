@@ -1,17 +1,33 @@
 extends Node2D
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 onready var level_global : Node = $"/root/LevelGlobal"
+var JUMP_PLATES = []
+var start_node : Node2D = null
+var character : KinematicBody2D
+var is_game_over = false
+var current_level = null
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	level_global.set_current_level(get_node("./.."))
-	pass # Replace with function body.
+	var scene = preload("res://GameObjects/Character/Character.tscn").instance()
+	add_child(scene)
+	character = scene as KinematicBody2D
+	character.z_index = 10
+	level_global.current_level = self
 
+func get_character_node() -> KinematicBody2D:
+	if character == null:
+		var scene = preload("res://GameObjects/Character/Character.tscn").instance()
+		add_child(scene)
+		character = scene as KinematicBody2D
+		character.z_index = 10
+		$LevelUI/LevelCamera.on_character_added(character)
+	return character
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func game_over():
+	is_game_over = true
+	character.speed = 0.0
+	$LevelUI/GameOver._on_game_over()
+
+func activate_all_jump_plates():
+	for plate in JUMP_PLATES:
+		plate.is_active = true

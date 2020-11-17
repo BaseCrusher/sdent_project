@@ -1,12 +1,7 @@
 extends Camera2D
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-onready var level_global : Node = $"/root/LevelGlobal"
-onready var character : Node = level_global.get_character_node()
+onready var current_level : Node
+onready var character : Node
 onready var ui_node : Node = $"./.."
 
 var is_in_character = false
@@ -18,26 +13,32 @@ const zoom_speed = 5.0
 const min_zoom = Vector2(1, 1)
 var max_zoom = Vector2(10, 10)
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
+	$"./../..".connect("ready", self, "_on_finished_level_loading")
+
+
+func _on_finished_level_loading():
+	current_level = $"./../.."
+	character = current_level.character
 	character.connect("mouse_entered", self, "_handle_mouse_entered_character")
 	character.connect("mouse_exited", self, "_handle_mouse_exited_character")
-	pass # Replace with function body.
+
+
 
 func _handle_mouse_entered_character():
 	is_in_character = true
-	pass
+
 
 func _handle_mouse_exited_character():
 	is_in_character = false
-	pass
+
 
 func _process(delta):
 	zoom = lerp(zoom, target_zoom, delta * zoom_speed)
-	pass
+
 
 func _input(event):
-	if not level_global.is_game_over:
+	if current_level != null and not current_level.is_game_over:
 		if event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
 			if not is_in_character:
 				if event.pressed:

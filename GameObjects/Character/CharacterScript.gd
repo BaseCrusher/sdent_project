@@ -15,19 +15,21 @@ var start_pos : Vector2
 var move_direction : Vector2 = Vector2.ZERO
 var speed : float = 0.0
 var state : int = CharacterStates.ATTACHED_TO_PLATE
+var current_level
 # Offset between mouse and character center. Needed for better pull mechanic
 var grabbed_offset = Vector2()
 
-onready var level_global : Node = $"/root/LevelGlobal"
-
-
 func _ready():
-	start_pos = position
+	$"./..".connect("ready", self, "_on_finished_level_loading")
 
+
+func _on_finished_level_loading():
+	current_level = $"/root/LevelGlobal".current_level
+	start_pos = global_position
 
 func set_position(new_position : Vector2) -> void:
-	position = new_position
-	start_pos = position
+	global_position = new_position
+	start_pos = global_position
 
 
 func _input(event):
@@ -41,42 +43,44 @@ func _input_event(_viewport, event, _shape_idx):
 
 
 func _physics_process(delta):
-	if is_selected:
-		# Move character with mouse
-		
-		# TODO: Check if offset needt to be added before or after set length.
-		var temp_position = get_global_mouse_position() - start_pos + grabbed_offset
-		if temp_position.length() >= MAX_PULL_LENGTH:
-			temp_position = temp_position.clamped(MAX_PULL_LENGTH)
-		position = start_pos + temp_position
-	else:
-		# Move character when mouse released
-		position = position + (move_direction * speed * delta)
-		speed *= DAMPING
-		if speed <=10e-5:
-			move_direction = Vector2.ZERO
-			speed = 0
-		start_pos = global_position
-		pass
+	if current_level != null and not current_level.is_game_over:
+		if speed == 0 and state != CharacterStates.ATTACHED_TO_PLATE:
+			current_level.game_over()
+			
+		if is_selected:
+			# TODO: Check if offset needt to be added before or after set length.
+			var temp_position = get_global_mouse_position() - start_pos + grabbed_offset
+			if temp_position.length() >= MAX_PULL_LENGTH:
+				temp_position = temp_position.clamped(MAX_PULL_LENGTH)
+			global_position = start_pos + temp_position
+		else:
+			# Move character when mouse released
+			global_position = global_position + (move_direction * speed * delta)
+			speed *= DAMPING
+			if speed <=10e-3:
+				move_direction = Vector2.ZERO
+				speed = 0
+			start_pos = global_position
+			pass
 
 
 func handle_pulling():
 	is_selected = true
-	grabbed_offset = position - get_global_mouse_position()
+	grabbed_offset = global_position - get_global_mouse_position()
 	pass
 
 
 func handle_releasing():
 	is_selected = false
-	var distance = position.distance_to(start_pos)
+	var distance = global_position.distance_to(start_pos)
 	if distance > MIN_PULL_LENGTH:
 		state = CharacterStates.FLYING
-		move_direction = position.direction_to(start_pos) * distance * DIRECTION_VECTOR_MULTIPLIER
+		move_direction = global_position.direction_to(start_pos) * distance * DIRECTION_VECTOR_MULTIPLIER
 		speed = distance / VECTOR_LENGTH_TO_SPEED
 		if speed > MAX_SPEED:
 			speed = MAX_SPEED
 	else:
-		position = start_pos
+		global_position = start_pos
 
 
 

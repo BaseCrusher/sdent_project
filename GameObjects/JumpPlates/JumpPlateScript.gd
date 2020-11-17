@@ -4,16 +4,18 @@ class_name JumpPlate
 export(bool) var is_start_plate
 export(bool) var is_end_plate
 
-onready var level_global : Node = $"/root/LevelGlobal"
-onready var character : Node2D = level_global.get_character_node()
+onready var current_level : Node
+onready var character : Node2D
 
 var is_active : bool = true
 
 func _ready():
-	level_global.JUMP_PLATES.append(self)
+	current_level = $"/root/LevelGlobal".current_level
+	character = current_level.character
+	current_level.JUMP_PLATES.append(self)
 	if is_start_plate:
-		level_global.start_node = self 
-		character.set_position(position)
+		current_level.start_node = self 
+		character.set_position(self.position)
 
 
 func character_entered(body : Node):
@@ -21,10 +23,10 @@ func character_entered(body : Node):
 		print("bla")
 		
 	if is_active and body is Character:
-		level_global.activate_all_jump_plates()
+		current_level.activate_all_jump_plates()
 		is_active = false
 		character.speed = 0.0
 		character.move_direction = Vector2.ZERO
 		character.state = CharacterStates.ATTACHED_TO_PLATE
-		character.position = position
+		character.global_position = position
 	pass # Replace with function body.

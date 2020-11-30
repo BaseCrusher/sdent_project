@@ -3,9 +3,13 @@
 [ext_resource path="res://UI/SettingsMenu/ResolutionOptBtn.gd" type="Script" id=1]
 [ext_resource path="res://UI/SettingsMenu/SettingsMenu.gd" type="Script" id=2]
 
-
-[node name="Node2D" type="Node2D"]
+[node name="Control" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="MuteBx" type="CheckBox" parent="."]
 margin_left = 182.481
@@ -47,5 +51,3 @@ text = "Back"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="toggled" from="MuteBx" to="." method="_on_MuteBx_toggled"]
-[connection signal="pressed" from="BackBtn" to="." method="_on_BackBtn_pressed"]

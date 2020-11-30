@@ -19,7 +19,7 @@ func _ready():
 
 
 func get_number_of_scenes():
-	var counter = -1 # -1 because of the global level
+	var counter = -1 # -1 because of the abstract level
 	var dir = Directory.new()
 	dir.open("res://Levels")
 	dir.list_dir_begin()

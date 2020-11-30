@@ -3,9 +3,8 @@
 [ext_resource path="res://UI/MainMenu/MainMenu.gd" type="Script" id=1]
 
 [node name="MainMenu" type="Control"]
-anchor_top = 0.00117284
 anchor_right = 1.0
-anchor_bottom = 1.00117
+anchor_bottom = 1.0
 margin_left = -1.25989
 margin_top = -1.25989
 margin_right = -1.25989
@@ -16,24 +15,23 @@ __meta__ = {
 }
 
 [node name="StartGameBtn" type="Button" parent="."]
-anchor_left = 0.353516
-anchor_top = 0.116667
-anchor_right = 0.646484
-anchor_bottom = 0.45
+margin_left = 362.74
+margin_top = 63.0
+margin_right = 576.74
+margin_bottom = 177.0
 text = "Start game"
 __meta__ = {
-"_edit_use_anchors_": true
+"_edit_use_anchors_": false
 }
 
 [node name="SettingsBtn" type="Button" parent="."]
-anchor_left = 0.353516
-anchor_top = 0.533333
-anchor_right = 0.646484
-anchor_bottom = 0.733333
-margin_top = -3.05176e-05
+margin_left = 360.0
+margin_top = 213.401
+margin_right = 584.0
+margin_bottom = 302.401
 text = "Settings"
 __meta__ = {
-"_edit_use_anchors_": true
+"_edit_use_anchors_": false
 }
 [connection signal="pressed" from="StartGameBtn" to="." method="_on_StartGameBtn_pressed"]
 [connection signal="pressed" from="SettingsBtn" to="." method="_on_SettingsBtn_pressed"]

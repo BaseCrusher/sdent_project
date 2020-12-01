@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 
 # Declare member variables here. Examples:
@@ -13,9 +13,10 @@ var button_node=preload("res://UI/LevelMenu/ButtonEScene.tscn")
 func _ready():
 	for i in range(numberOfScenes): #example instantiate 6 times
 		var temp=button_node.instance()
-		temp.set_position(Vector2(200*i , 50)) #use i to change y position
+#	temp.set_position(Vector2(200*i , 50)) #use i to change y position
 		temp.name= "LvlBtn"+str(i+1) #custom name, ej: panel1,panel2, etc
-		add_child(temp) 
+		$GridContainer.add_child(temp)
+	$GridContainer.queue_sort() 
 
 
 func get_number_of_scenes():

@@ -2,14 +2,23 @@
 
 [ext_resource path="res://UI/LevelMenu/ButtonEScene.gd" type="Script" id=1]
 
-[node name="Node2D" type="Node2D"]
+[node name="Control" type="Control"]
+rect_min_size = Vector2( 300, 300 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Button" type="Button" parent="."]
 margin_left = 40.1107
 margin_top = 26.0368
 margin_right = 206.111
 margin_bottom = 157.037
+rect_min_size = Vector2( 100, 100 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": true
 }

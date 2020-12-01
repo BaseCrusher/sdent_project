@@ -2,23 +2,30 @@
 
 [ext_resource path="res://UI/LevelMenu/ChooseLvlMenu.gd" type="Script" id=1]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
-[node name="BackBtn" type="Button" parent="."]
-margin_left = 40.0
-margin_top = 490.704
-margin_right = 213.0
-margin_bottom = 574.704
+[node name="GridContainer" type="GridContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 300, 300 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackBtn" type="Button" parent="GridContainer"]
+margin_right = 42.0
+margin_bottom = 20.0
 text = "Back"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="GridContainer" type="GridContainer" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-[connection signal="pressed" from="BackBtn" to="." method="_on_BackBtn_pressed"]
+[connection signal="pressed" from="GridContainer/BackBtn" to="." method="_on_BackBtn_pressed"]

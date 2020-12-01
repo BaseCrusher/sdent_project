@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Levels/AbstractLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://GameObjects/JumpPlates/JumpPlate.tscn" type="PackedScene" id=2]
+[ext_resource path="res://GameObjects/GravityFields/GravityField.tscn" type="PackedScene" id=3]
 
 [node name="Level1" type="Node"]
 
@@ -9,10 +10,15 @@
 position = Vector2( 56.7389, 57.5802 )
 z_index = -1
 
+[node name="GravityField" parent="." instance=ExtResource( 3 )]
+position = Vector2( 126.895, -210.988 )
+scale = Vector2( 1.01625, 1.01625 )
+is_pulling = true
+
 [node name="JumpPlate" parent="." instance=ExtResource( 2 )]
-position = Vector2( 202.378, -74.419 )
+position = Vector2( 510.215, 74.5839 )
 is_end_plate = true
 
 [node name="JumpPlate2" parent="." instance=ExtResource( 2 )]
-position = Vector2( -328.218, -58.0236 )
+position = Vector2( -406.375, -206.362 )
 is_start_plate = true

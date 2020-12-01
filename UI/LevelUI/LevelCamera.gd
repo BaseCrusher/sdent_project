@@ -48,7 +48,14 @@ func _input(event):
 
 		if pressed and event is InputEventMouseMotion:
 			global_position -= event.relative
-			pass
+			if global_position.x < limit_left + (get_viewport().size.x/2):
+				global_position.x = limit_left + (get_viewport().size.x/2)
+			if global_position.x > limit_right - (get_viewport().size.x/2):
+				global_position.x = limit_right - (get_viewport().size.x/2)
+			if global_position.y < limit_top + (get_viewport().size.y/2):
+				global_position.y = limit_top + (get_viewport().size.y/2)
+			if global_position.y > limit_bottom - (get_viewport().size.y/2):
+				global_position.y = limit_bottom - (get_viewport().size.y/2)
 			
 		if event is InputEventMouseButton and event.button_index == BUTTON_WHEEL_UP:
 			target_zoom -= Vector2(zoom_amount, zoom_amount)
@@ -61,3 +68,4 @@ func _input(event):
 			if target_zoom > max_zoom:
 				target_zoom = max_zoom
 			pass
+		print(get_viewport().size.x)

@@ -56,10 +56,10 @@ func calculate_bounderies():
 	top -= 700
 	bottom += 700
 	
-	left = stepify(left, 100)
-	right = stepify(right, 100)
-	top = stepify(top, 100)
-	bottom = stepify(bottom, 100)
+	left = stepify(left, 1)
+	right = stepify(right, 1)
+	top = stepify(top, 1)
+	bottom = stepify(bottom, 1)
 	
 	var upper_left = Vector2(left, top)
 	var upper_right = Vector2(right, top)
@@ -95,4 +95,9 @@ func calculate_bounderies():
 	add_child(top_barrier)
 	add_child(bottom_barrier)
 	$bg_tile.set_region_rect(Rect2(left*4, top*4, right*4, bottom*4))
+	$LevelUI/LevelCamera.global_position = character.global_position
+	$LevelUI/LevelCamera.limit_bottom = bottom + 2.5*y_size + 500
+	$LevelUI/LevelCamera.limit_left = left + x_size - 500
+	$LevelUI/LevelCamera.limit_right = right + 2.5*x_size + 500
+	$LevelUI/LevelCamera.limit_top = top + y_size - 500
 

@@ -51,16 +51,15 @@ func calculate_bounderies():
 			top = node_pos.y 
 		if node_pos.y > bottom:
 			bottom = node_pos.y
-	left -= 500
-	right+= 500
-	top -= 500
-	bottom += 500
+	left -= 700
+	right+= 700
+	top -= 700
+	bottom += 700
 	
 	left = stepify(left, 100)
 	right = stepify(right, 100)
 	top = stepify(top, 100)
 	bottom = stepify(bottom, 100)
-	
 	
 	var upper_left = Vector2(left, top)
 	var upper_right = Vector2(right, top)
@@ -71,22 +70,21 @@ func calculate_bounderies():
 	var right_barrier = scene.instance()
 	var top_barrier = scene.instance()
 	var bottom_barrier = scene.instance()
-	left_barrier.global_position = Vector2(left, 0)
-	right_barrier.global_position = Vector2(right, 0)
-	top_barrier.global_position = Vector2(0, top)
-	bottom_barrier.global_position = Vector2(0, bottom)
+	left_barrier.global_position = Vector2(left, (top + bottom) /2)
+	right_barrier.global_position = Vector2(right, (top + bottom) /2)
+	top_barrier.global_position = Vector2((left + right) /2, top)
+	bottom_barrier.global_position = Vector2((left + right) /2, bottom)
 	left_barrier.z_index = 10
 	right_barrier.z_index = 10
 	top_barrier.z_index = 10
 	bottom_barrier.z_index = 10
-	
-	
+
 	var barrier_node = left_barrier.get_child(0)
 	var x_size = barrier_node.texture.get_size().x * barrier_node.scale.x
 	var y_size = barrier_node.texture.get_size().y * barrier_node.scale.y
 	var x_factor = -(left - right - x_size) / x_size
 	var y_factor = -(top - bottom - y_size) / y_size
-	
+
 	left_barrier.global_scale = Vector2(1, y_factor)
 	right_barrier.global_scale = Vector2(1, y_factor)
 	top_barrier.global_scale = Vector2(x_factor, 1)

@@ -56,6 +56,12 @@ func calculate_bounderies():
 	top -= 500
 	bottom += 500
 	
+	left = stepify(left, 100)
+	right = stepify(right, 100)
+	top = stepify(top, 100)
+	bottom = stepify(bottom, 100)
+	
+	
 	var upper_left = Vector2(left, top)
 	var upper_right = Vector2(right, top)
 	var lower_left = Vector2(left, bottom)
@@ -78,8 +84,8 @@ func calculate_bounderies():
 	var barrier_node = left_barrier.get_child(0)
 	var x_size = barrier_node.texture.get_size().x * barrier_node.scale.x
 	var y_size = barrier_node.texture.get_size().y * barrier_node.scale.y
-	var x_factor = -(left - right) / x_size
-	var y_factor = -(top - bottom) / y_size
+	var x_factor = -(left - right - x_size) / x_size
+	var y_factor = -(top - bottom - y_size) / y_size
 	
 	left_barrier.global_scale = Vector2(1, y_factor)
 	right_barrier.global_scale = Vector2(1, y_factor)
@@ -90,5 +96,5 @@ func calculate_bounderies():
 	add_child(right_barrier)
 	add_child(top_barrier)
 	add_child(bottom_barrier)
-	$bg_tile.set_region_rect(Rect2(left*2, top*2, right*2, bottom*2))
+	$bg_tile.set_region_rect(Rect2(left*4, top*4, right*4, bottom*4))
 

@@ -68,6 +68,8 @@ func _physics_process(delta):
 		if state == CharacterStates.ATTACHING_TO_PLATE:
 			move_direction += (attaching_to_plate.global_position - global_position).normalized().tangent()
 			move_direction += (attaching_to_plate.global_position - global_position)
+			if speed >= 1.0:
+				speed *= 0.8
 			if speed == 0:
 				global_position = global_position.move_toward(attaching_to_plate.global_position, delta * 50)
 			if global_position.distance_to(attaching_to_plate.global_position) <= 10e-3:

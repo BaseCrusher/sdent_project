@@ -19,6 +19,8 @@ var current_level
 # Offset between mouse and character center. Needed for better pull mechanic
 var grabbed_offset = Vector2()
 
+var attaching_to_plate = null 
+
 func _ready():
 	$"./..".connect("ready", self, "_on_finished_level_loading")
 
@@ -44,7 +46,7 @@ func _input_event(_viewport, event, _shape_idx):
 
 func _physics_process(delta):
 	if current_level != null and not current_level.is_game_over:
-		if speed == 0 and state != CharacterStates.ATTACHED_TO_PLATE:
+		if speed == 0 and state != CharacterStates.ATTACHED_TO_PLATE and state != CharacterStates.ATTACHING_TO_PLATE:
 			current_level.game_over()
 			
 		if is_selected:
@@ -62,6 +64,16 @@ func _physics_process(delta):
 				speed = 0
 			start_pos = global_position
 			pass
+		
+		if state == CharacterStates.ATTACHING_TO_PLATE:
+			move_direction += (attaching_to_plate.global_position - global_position).normalized().tangent()
+			move_direction += (attaching_to_plate.global_position - global_position)
+			if speed == 0:
+				global_position = global_position.move_toward(attaching_to_plate.global_position, delta * 50)
+			if global_position.distance_to(attaching_to_plate.global_position) <= 10e-3:
+				state = CharacterStates.ATTACHED_TO_PLATE
+				speed = 0
+				move_direction = Vector2.ZERO
 
 
 func handle_pulling():

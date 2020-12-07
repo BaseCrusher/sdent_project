@@ -68,4 +68,4 @@ func _input(event):
 			if target_zoom > max_zoom:
 				target_zoom = max_zoom
 			pass
-		print(get_viewport().size.x)
+		

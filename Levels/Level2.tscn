@@ -11,7 +11,7 @@ position = Vector2( 56.7389, 57.5802 )
 z_index = -1
 
 [node name="JumpPlate" parent="." instance=ExtResource( 2 )]
-position = Vector2( 457.928, 189.15 )
+position = Vector2( 531.467, 166.523 )
 is_end_plate = true
 
 [node name="JumpPlate2" parent="." instance=ExtResource( 2 )]

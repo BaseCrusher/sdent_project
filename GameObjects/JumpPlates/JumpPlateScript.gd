@@ -1,4 +1,4 @@
-extends Node2D
+extends Sprite
 class_name JumpPlate
 
 export(bool) var is_start_plate
@@ -16,6 +16,10 @@ func _ready():
 	if is_start_plate:
 		current_level.start_node = self 
 		character.set_position(self.position)
+		texture = load("res://resources/images/startplate.png")
+	if is_end_plate:
+		texture = load("res://resources/images/endplate.png")
+		pass
 
 
 func character_entered(body : Node):
@@ -25,8 +29,10 @@ func character_entered(body : Node):
 	if is_active and body is Character:
 		current_level.activate_all_jump_plates()
 		is_active = false
-		character.speed = 0.0
-		character.move_direction = Vector2.ZERO
-		character.state = CharacterStates.ATTACHED_TO_PLATE
-		character.global_position = position
+		character.state = CharacterStates.ATTACHING_TO_PLATE
+		character.attaching_to_plate = self
+		#character.speed = 0.0
+		#character.move_direction = Vector2.ZERO
+		#character.state = CharacterStates.ATTACHED_TO_PLATE
+		#character.global_position = position
 	pass # Replace with function body.

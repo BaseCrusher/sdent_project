@@ -6,7 +6,7 @@
 [ext_resource path="res://GameObjects/Character/CharacterScript.gd" type="Script" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 44.8326
+radius = 45.1443
 
 [node name="Character" type="KinematicBody2D"]
 input_pickable = true
@@ -20,6 +20,7 @@ texture = ExtResource( 3 )
 shape = SubResource( 1 )
 
 [node name="_character" type="Sprite" parent="."]
+visible = false
 position = Vector2( 111.361, 140.755 )
 texture = ExtResource( 2 )
 

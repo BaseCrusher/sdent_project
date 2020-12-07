@@ -4,7 +4,7 @@
 [ext_resource path="res://resources/images/jump_plate.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 303.37
+radius = 158.069
 
 [node name="JumpPlate" type="Sprite"]
 scale = Vector2( 0.296252, 0.296252 )

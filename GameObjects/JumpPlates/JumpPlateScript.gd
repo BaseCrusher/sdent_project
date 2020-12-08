@@ -20,7 +20,7 @@ func _ready():
 
 func character_entered(body : Node):
 	if is_end_plate:
-		print("bla")
+		current_level.level_completed()
 		
 	if is_active and body is Character:
 		current_level.activate_all_jump_plates()

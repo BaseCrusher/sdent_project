@@ -26,6 +26,7 @@ is_start_plate = true
 
 [node name="JumpPlate3" parent="." instance=ExtResource( 2 )]
 position = Vector2( -243.584, 285.705 )
+is_end_plate = true
 
 [node name="JumpPlate4" parent="." instance=ExtResource( 2 )]
 position = Vector2( 377.802, -209.537 )

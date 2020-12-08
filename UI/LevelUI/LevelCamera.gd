@@ -15,6 +15,8 @@ var max_zoom = Vector2(10, 10)
 
 func _ready():
 	$"./../..".connect("ready", self, "_on_finished_level_loading")
+	zoom = $"/root/LevelGlobal".zoom_level
+	target_zoom = $"/root/LevelGlobal".zoom_level
 
 
 func _on_finished_level_loading():
@@ -59,12 +61,14 @@ func _input(event):
 			
 		if event is InputEventMouseButton and event.button_index == BUTTON_WHEEL_UP:
 			target_zoom -= Vector2(zoom_amount, zoom_amount)
+			$"/root/LevelGlobal".zoom_level = target_zoom
 			if target_zoom < min_zoom:
 				target_zoom = min_zoom
 			pass
 		
 		if event is InputEventMouseButton and event.button_index == BUTTON_WHEEL_DOWN:
 			target_zoom += Vector2(zoom_amount, zoom_amount)
+			$"/root/LevelGlobal".zoom_level = target_zoom
 			if target_zoom > max_zoom:
 				target_zoom = max_zoom
 			pass

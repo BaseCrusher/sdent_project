@@ -5,9 +5,9 @@
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -1.25989
+margin_left = -2.59473
 margin_top = -1.25989
-margin_right = -1.25989
+margin_right = -2.59473
 margin_bottom = -1.25989
 script = ExtResource( 1 )
 __meta__ = {

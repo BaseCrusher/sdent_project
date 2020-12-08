@@ -8,10 +8,12 @@ func _on_TryAgainBtn_pressed():
 
 
 func _on_ChooseLvlBtn_pressed():
+	$"/root/LevelGlobal".zoom_level = Vector2(1,1)
 	get_tree().change_scene("res://UI/LevelMenu/ChooseLvlMenu.tscn")
 
 
 func _on_MainMenuBtn_pressed():
+	$"/root/LevelGlobal".zoom_level = Vector2(1,1)
 	get_tree().change_scene("res://UI/MainMenu/MainMenu.tscn")
 
 

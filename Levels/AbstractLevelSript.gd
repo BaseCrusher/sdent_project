@@ -21,7 +21,6 @@ func get_character_node() -> KinematicBody2D:
 		add_child(scene)
 		character = scene as KinematicBody2D
 		character.z_index = 10
-		$LevelUI/LevelCamera.on_character_added(character)
 	return character
 
 func game_over():

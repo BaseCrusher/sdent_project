@@ -24,5 +24,4 @@ func _ready():
 
 func _on_Button_pressed():
 	get_tree().change_scene("res://Levels/Level" + name[number] + ".tscn")
-	print(name[number])
 	pass # Replace with function body.

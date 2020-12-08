@@ -32,7 +32,6 @@ func get_number_of_scenes():
 			counter += 1
 
 	dir.list_dir_end()
-	print(counter)
 	return counter
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

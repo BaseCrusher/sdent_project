@@ -28,7 +28,13 @@ func game_over():
 	character.speed = 0.0
 	$LevelUI/GameOver._on_game_over()
 
-func activate_all_jump_plates():    
+
+func level_completed():
+	$LevelUI/LevelCompleted._on_level_completed()
+	$LevelUI/PlayUI/Button.visible = false
+
+
+func activate_all_jump_plates():
 	for plate in JUMP_PLATES:
 		plate.is_active = true
 

@@ -1,6 +1,5 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://UI/SettingsMenu/ResolutionOptBtn.gd" type="Script" id=1]
 [ext_resource path="res://UI/SettingsMenu/SettingsMenu.gd" type="Script" id=2]
 
 [node name="Control" type="Control"]
@@ -11,43 +10,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MuteBx" type="CheckBox" parent="."]
-margin_left = 182.481
-margin_top = 43.4322
-margin_right = 270.481
-margin_bottom = 103.432
-text = "Mute"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ResolutionOptBtn" type="OptionButton" parent="."]
-margin_left = 185.0
-margin_top = 90.0
-margin_right = 301.0
-margin_bottom = 125.0
-text = "Resolution"
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ResLbl" type="Label" parent="."]
-margin_left = 314.0
-margin_top = 100.0
-margin_right = 382.0
-margin_bottom = 114.0
-text = "Resolution"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="BackBtn" type="Button" parent="."]
-margin_left = 185.0
-margin_top = 172.0
-margin_right = 286.0
-margin_bottom = 229.0
+margin_left = 23.8531
+margin_top = 475.294
+margin_right = 223.853
+margin_bottom = 575.294
+rect_min_size = Vector2( 200, 100 )
 text = "Back"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="pressed" from="BackBtn" to="." method="_on_BackBtn_pressed"]

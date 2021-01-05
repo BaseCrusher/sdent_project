@@ -5,7 +5,7 @@ func _on_level_completed():
 	$LevelCompleted.visible = true
 	
 	var lastlvl = get_tree().current_scene.name
-	if lastlvl == "Level4":
+	if lastlvl == "Level8":
 		
 		$LevelCompleted/GridContainer/NextLvlBtn.visible = false
 

@@ -33,3 +33,19 @@ func _on_Lvl3Btn_pressed():
 
 func _on_Lvl4Btn_pressed():
 	get_tree().change_scene("res://Levels/Level4.tscn")
+
+
+func _on_Lvl5Btn_pressed():
+	get_tree().change_scene("res://Levels/Level5.tscn")
+
+
+func _on_Lvl6Btn_pressed():
+	get_tree().change_scene("res://Levels/Level6.tscn")
+
+
+func _on_Lvl7Btn_pressed():
+	get_tree().change_scene("res://Levels/Level7.tscn")
+
+
+func _on_Lvl8Btn_pressed():
+	get_tree().change_scene("res://Levels/Level8.tscn")

@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Levels/AbstractLevel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://GameObjects/JumpPlates/JumpPlate.tscn" type="PackedScene" id=2]
+[ext_resource path="res://GameObjects/RotationModifier/RotationModifier.tscn" type="PackedScene" id=3]
+[ext_resource path="res://GameObjects/Obstacles/BarrierObstacle.tscn" type="PackedScene" id=4]
+[ext_resource path="res://GameObjects/MovingModeifier/MovingModifier.tscn" type="PackedScene" id=5]
+[ext_resource path="res://GameObjects/MovingModeifier/MovingModifierPoint.tscn" type="PackedScene" id=6]
+[ext_resource path="res://GameObjects/GravityFields/GravityField.tscn" type="PackedScene" id=7]
+
+[node name="Level7" type="Node"]
+
+[node name="AbstractLevel" parent="." instance=ExtResource( 1 )]
+position = Vector2( 50.7389, 55.5802 )
+z_index = -1
+
+[node name="JumpPlate" parent="." instance=ExtResource( 2 )]
+position = Vector2( 415.967, -649.948 )
+is_end_plate = true
+
+[node name="JumpPlate2" parent="." instance=ExtResource( 2 )]
+position = Vector2( -155.994, 452.459 )
+is_start_plate = true
+
+[node name="JumpPlate3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 415.176, -104.877 )
+
+[node name="BarrierObstacle" parent="." instance=ExtResource( 4 )]
+position = Vector2( 149.84, 294.923 )
+scale = Vector2( 1, 10 )
+
+[node name="MovingModifier" parent="." instance=ExtResource( 5 )]
+movement_speed = 2.0
+
+[node name="GravityField" parent="MovingModifier" instance=ExtResource( 7 )]
+position = Vector2( -401.952, 171.246 )
+
+[node name="MovingModifierPoint" parent="MovingModifier" instance=ExtResource( 6 )]
+position = Vector2( -470.926, 173.624 )
+
+[node name="MovingModifierPoint2" parent="MovingModifier" instance=ExtResource( 6 )]
+position = Vector2( 83.2445, 166.489 )
+
+[node name="RotationModifier" parent="." instance=ExtResource( 3 )]
+
+[node name="BarrierObstacle" parent="RotationModifier" instance=ExtResource( 4 )]
+position = Vector2( 187.895, -385.303 )
+scale = Vector2( 14, 1 )
+
+[node name="RotationModifier2" parent="." instance=ExtResource( 3 )]
+rotation_speed = 4.0
+
+[node name="BarrierObstacle" parent="RotationModifier2" instance=ExtResource( 4 )]
+position = Vector2( 651.686, -387.681 )
+scale = Vector2( 14, 1 )

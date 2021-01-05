@@ -19,5 +19,5 @@ position = Vector2( -328.218, -58.0236 )
 is_start_plate = true
 
 [node name="BouncingPlate" parent="." instance=ExtResource( 3 )]
-position = Vector2( -43.8406, 181.019 )
-rotation = 3.2677
+position = Vector2( -304.056, 274.357 )
+rotation = 2.32421

@@ -16,10 +16,10 @@ func _ready():
 func _on_Area2D_body_entered(body):
 	var rotation_delta = rotation
 	var characterPos = global_position + (character.global_position - global_position).rotated(rotation_delta)
-	var normal = Vector2(0, 0)
+	var normal = Vector2(0, 1).rotated(rotation)
 	if characterPos.y < position.y:
-		normal = Vector2(0, -1)
+		character.move_direction = character.move_direction.bounce(-normal)
 	if characterPos.y > position.y:
-		normal = Vector2(0, 1)
-	character.move_direction = character.move_direction.bounce(normal)
+		character.move_direction = character.move_direction.bounce(normal)
+	
 	pass # Replace with function body.

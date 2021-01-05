@@ -26,7 +26,7 @@ func _physics_process(delta):
 	for node in rotating_objects:
 		if (is_left_rotating):
 			node.rotation += rotation_speed * delta
-			if (node.rotation_degrees > 90):
+			if (node.rotation_degrees > rotation_to):
 				is_left_rotating = false
 		else:
 			node.rotation -= rotation_speed * delta

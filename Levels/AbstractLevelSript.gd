@@ -15,6 +15,10 @@ func _ready():
 	level_global.current_level = self
 	$"./..".connect("ready", self, "calculate_bounderies")
 
+func _input(ev):
+	if Input.is_key_pressed(KEY_R):
+		get_tree().reload_current_scene()
+
 func get_character_node() -> KinematicBody2D:
 	if character == null:
 		var scene = preload("res://GameObjects/Character/Character.tscn").instance()

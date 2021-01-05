@@ -27,7 +27,7 @@ scale = Vector2( 1.01625, 1.01625 )
 is_pulling = true
 
 [node name="GravityField2" parent="." instance=ExtResource( 2 )]
-position = Vector2( -565.351, 326.993 )
+position = Vector2( -584.378, 310.344 )
 scale = Vector2( 1.01625, 1.01625 )
 is_pulling = true
 

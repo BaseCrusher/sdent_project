@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Levels/AbstractLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://GameObjects/JumpPlates/JumpPlate.tscn" type="PackedScene" id=2]
+[ext_resource path="res://GameObjects/BouncingPlate/BouncingPlate.tscn" type="PackedScene" id=3]
 
 [node name="Level1" type="Node"]
 
@@ -16,3 +17,7 @@ is_end_plate = true
 [node name="JumpPlate2" parent="." instance=ExtResource( 2 )]
 position = Vector2( -328.218, -58.0236 )
 is_start_plate = true
+
+[node name="BouncingPlate" parent="." instance=ExtResource( 3 )]
+position = Vector2( -43.8406, 181.019 )
+rotation = 3.2677

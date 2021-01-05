@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/gravi_field_outer.png-f92a1fb4620ea7d6cea4bea4fdbbc330.stex"
+path="res://.import/gravi_field_outer1.png-baeb4520f4f41208f180ecafb038d627.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/images/gravi_field_outer.png"
-dest_files=[ "res://.import/gravi_field_outer.png-f92a1fb4620ea7d6cea4bea4fdbbc330.stex" ]
+source_file="res://resources/images/gravi_field_outer1.png"
+dest_files=[ "res://.import/gravi_field_outer1.png-baeb4520f4f41208f180ecafb038d627.stex" ]
 
 [params]
 

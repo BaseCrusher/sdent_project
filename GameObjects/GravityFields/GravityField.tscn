@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://resources/images/gravi_field_outer.png" type="Texture" id=1]
+[ext_resource path="res://resources/images/gravi_field_outer1.png" type="Texture" id=1]
 [ext_resource path="res://resources/images/gravi_field_inner.png" type="Texture" id=2]
 [ext_resource path="res://GameObjects/GravityFields/GravityField.gd" type="Script" id=3]
 

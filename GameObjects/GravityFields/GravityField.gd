@@ -9,6 +9,8 @@ onready var character
 func _ready():
 	current_level = $"/root/LevelGlobal".current_level
 	character = current_level.character
+	if not is_pulling:
+		$gravi_field_inner/gravi_field_outer.texture = load("res://resources/images/gravi_field_outer2.png")
 
 func _physics_process(delta) -> void:
 	if current_level != null and not current_level.is_game_over:

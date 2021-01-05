@@ -11,7 +11,7 @@ export(float) var rotation_speed = 1
 export(float) var rotation_from = 0
 export(float) var rotation_to = 90
 
-var is_left_rotating = true
+export(bool) var is_right_rotating = true
 
 var rotating_objects = []
 
@@ -24,14 +24,20 @@ func _ready():
 
 func _physics_process(delta):
 	for node in rotating_objects:
-		if (is_left_rotating):
-			node.rotation += rotation_speed * delta
-			if (node.rotation_degrees > rotation_to):
-				is_left_rotating = false
+		if rotation_from != rotation_to:
+			if (is_right_rotating):
+				node.rotation += rotation_speed * delta
+				if (node.rotation_degrees > rotation_to):
+					is_right_rotating = false
+			else:
+				node.rotation -= rotation_speed * delta
+				if (node.rotation_degrees < rotation_from):
+					is_right_rotating = true
 		else:
-			node.rotation -= rotation_speed * delta
-			if (node.rotation_degrees < rotation_from):
-				is_left_rotating = true
+			if (is_right_rotating):
+				node.rotation += rotation_speed * delta
+			else:
+				node.rotation -= rotation_speed * delta
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

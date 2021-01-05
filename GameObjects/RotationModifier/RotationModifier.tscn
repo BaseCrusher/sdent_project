@@ -4,3 +4,4 @@
 
 [node name="RotationModifier" type="Node2D"]
 script = ExtResource( 1 )
+rotation_to = 0.0

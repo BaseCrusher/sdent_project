@@ -29,3 +29,8 @@ func _on_Area2D_body_entered(body) -> void:
 
 func _on_Area2D_body_exited(body) -> void:
 	is_in_gravity = false
+
+
+func _on_Area2D2_body_entered(body):
+	if character.state != CharacterStates.ATTACHED_TO_PLATE:
+		current_level.game_over()

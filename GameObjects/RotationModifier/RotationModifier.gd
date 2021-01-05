@@ -5,7 +5,13 @@ extends Node2D
 # var a = 2
 # var b = "text"
 
+
+
 export(float) var rotation_speed = 1
+export(float) var rotation_from = 0
+export(float) var rotation_to = 90
+
+var is_left_rotating = true
 
 var rotating_objects = []
 
@@ -18,7 +24,14 @@ func _ready():
 
 func _physics_process(delta):
 	for node in rotating_objects:
-		node.rotation += rotation_speed * delta
+		if (is_left_rotating):
+			node.rotation += rotation_speed * delta
+			if (node.rotation > rotation_to):
+				is_left_rotating = false
+		else:
+			node.rotation -= rotation_speed * delta
+			if (node.rotation < rotation_from):
+				is_left_rotating = true
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

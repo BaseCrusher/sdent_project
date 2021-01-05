@@ -26,13 +26,12 @@ func _physics_process(delta):
 	for node in rotating_objects:
 		if (is_left_rotating):
 			node.rotation += rotation_speed * delta
-			if (node.rotation > rotation_to):
+			if (node.rotation_degrees > 90):
 				is_left_rotating = false
 		else:
 			node.rotation -= rotation_speed * delta
-			if (node.rotation < rotation_from):
+			if (node.rotation_degrees < rotation_from):
 				is_left_rotating = true
-	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

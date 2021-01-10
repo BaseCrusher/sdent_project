@@ -33,7 +33,7 @@ scale = Vector2( 1, 10 )
 movement_speed = 2.0
 
 [node name="GravityField" parent="MovingModifier" instance=ExtResource( 7 )]
-position = Vector2( -401.952, 171.246 )
+position = Vector2( -387.81, 168.418 )
 
 [node name="MovingModifierPoint" parent="MovingModifier" instance=ExtResource( 6 )]
 position = Vector2( -470.926, 173.624 )

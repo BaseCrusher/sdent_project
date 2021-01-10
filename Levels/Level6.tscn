@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Levels/AbstractLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://GameObjects/JumpPlates/JumpPlate.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://GameObjects/Obstacles/BarrierObstacle.tscn" type="PackedScene" id=4]
 [ext_resource path="res://GameObjects/MovingModeifier/MovingModifier.tscn" type="PackedScene" id=5]
 [ext_resource path="res://GameObjects/MovingModeifier/MovingModifierPoint.tscn" type="PackedScene" id=6]
+[ext_resource path="res://GameObjects/BouncingPlate/BouncingPlate.tscn" type="PackedScene" id=7]
 
 [node name="Level6" type="Node"]
 
@@ -18,7 +19,10 @@ position = Vector2( 760.837, 80.2249 )
 is_end_plate = true
 
 [node name="JumpPlate2" parent="." instance=ExtResource( 2 )]
-position = Vector2( -353.402, -206.362 )
+position = Vector2( -477.079, -213.497 )
+
+[node name="JumpPlate4" parent="." instance=ExtResource( 2 )]
+position = Vector2( -990.817, 226.51 )
 is_start_plate = true
 
 [node name="JumpPlate3" parent="." instance=ExtResource( 2 )]
@@ -40,5 +44,14 @@ position = Vector2( -81.4388, -507.63 )
 [node name="RotationModifier" parent="." instance=ExtResource( 3 )]
 
 [node name="BarrierObstacle" parent="RotationModifier" instance=ExtResource( 4 )]
-position = Vector2( 488.927, 16.9898 )
+position = Vector2( 486.549, 12.233 )
 scale = Vector2( 1, 8 )
+
+[node name="BarrierObstacle" parent="." instance=ExtResource( 4 )]
+position = Vector2( -561.306, -23.7842 )
+scale = Vector2( 15, 1 )
+
+[node name="BouncingPlate" parent="." instance=ExtResource( 7 )]
+position = Vector2( -1058.39, -183.138 )
+rotation = -0.849975
+scale = Vector2( 15, 1 )
